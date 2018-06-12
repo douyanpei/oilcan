@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.PermissionGrant" table="PERMISSIONGRANT" schema="dbo" >
+        <composite-id name="id" class="oilcan.model.PermissionGrantId">
+            <key-many-to-one name="principal" class="oilcan.model.Principal">
+                <column name="principalId" length="32" />
+            </key-many-to-one>
+            <key-many-to-one name="permission" class="oilcan.model.Permission">
+                <column name="permissionId" length="32" />
+            </key-many-to-one>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="saveBtn" type="button"  img="save.png" text="保存" action="saveDict"/>
+	<item id="separator2" type="separator"></item>
+	<item id="delBtn" type="button"  img="delete.png" text="删除" action="deleteDict"/>
+</toolbar>

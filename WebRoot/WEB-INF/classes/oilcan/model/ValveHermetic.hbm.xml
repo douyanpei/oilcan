@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.ValveHermetic" table="ValveHermetic" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="firstOilcan" type="java.lang.String">
+            <column name="firstOilcan" length="100" />
+        </property>
+        <property name="secondOilcan" type="java.lang.String">
+            <column name="secondOilcan" length="100" />
+        </property>
+        <property name="thirdOilcan" type="java.lang.String">
+            <column name="thirdOilcan" length="100" />
+        </property>
+        <property name="forthOilcan" type="java.lang.String">
+            <column name="forthOilcan" length="100" />
+        </property>
+        <property name="fifthOilcan" type="java.lang.String">
+            <column name="fifthOilcan" length="100" />
+        </property>
+        <property name="pressureStart" type="java.lang.Integer">
+            <column name="pressureStart" />
+        </property>
+        <property name="pressureEnd" type="java.lang.Integer">
+            <column name="pressureEnd" />
+        </property>
+        <property name="pressureState" type="java.lang.String">
+            <column name="pressureState" length="50" />
+        </property>
+        <property name="question" type="java.lang.String">
+            <column name="question" length="500" />
+        </property>
+        <property name="conclusion" type="java.lang.String">
+            <column name="conclusion" length="100" />
+        </property>
+        <property name="checkPerson" type="java.lang.String">
+            <column name="checkPerson" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

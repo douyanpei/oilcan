@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.Permission" table="Permission" schema="dbo" >
+        <id name="permissionId" type="java.lang.String">
+            <column name="permissionId" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="permission" class="oilcan.model.Permission" fetch="select" lazy="false">
+            <column name="parentId" length="32" />
+        </many-to-one>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" not-null="true" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="code" length="200" not-null="true" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="20" not-null="true" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" length="500" />
+        </property>
+        <property name="showOrder" type="java.lang.String">
+            <column name="showOrder" length="10" />
+        </property>
+        <property name="url" type="java.lang.String">
+            <column name="url" length="500" />
+        </property>
+        <property name="pym" type="java.lang.String">
+            <column name="pym" length="100" />
+        </property>
+        <property name="className" type="java.lang.String">
+            <column name="className" length="200" />
+        </property>
+        <property name="img" type="java.lang.String">
+            <column name="img" length="30" />
+        </property>
+        <set name="principals" inverse="true" table="PermissionGrant" schema="dbo" >
+            <key>
+                <column name="permissionId" length="32" />
+            </key>
+            <many-to-many entity-name="oilcan.model.Principal">
+                <column name="principalId" length="32" />
+            </many-to-many>
+        </set>
+        <set name="permissions" inverse="true">
+            <key>
+                <column name="parentId" length="32" />
+            </key>
+            <one-to-many class="oilcan.model.Permission" />
+        </set>
+    </class>
+</hibernate-mapping>

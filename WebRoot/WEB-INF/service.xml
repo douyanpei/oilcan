@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+					<!-- ***************************************
+								Service Layer
+					**************************************** -->
+	<import resource="persist.xml"/>
+	<import resource="support.xml"/>
+				<!-- ************* Auth ************* -->
+	<!-- Encryptor -->
+	<bean id="encryptor" class="auth.encryptor.NopEncryptor" />
+	<!-- Password Authenticator -->
+	<bean id="passwordAuthenticator" class="auth.PasswordAuthenticator">
+		<constructor-arg name="userService" ref="userService" />
+		<constructor-arg name="singlelogin" value="false" />
+		<constructor-arg name="encryptor" ref="encryptor" />
+	</bean>
+	
+	<!-- ************* report template ************* -->
+	<bean id="oilcanReport" class="report.impl.OilcanReport">
+		<constructor-arg name="xml" value="templates/oilcan-report.xml"/>
+		<constructor-arg name="xsl" value="templates/oilcan-report.xsl"/>
+		<constructor-arg name="jdao" ref="jdao"/>
+		<constructor-arg name="hdao" ref="hdao"/>
+		<constructor-arg name="webScope" ref="webScope"/>
+	</bean>	
+	
+	
+	
+	<!-- services -->
+	<bean id="serviceSupport" class="oilcan.base.service.ServiceSupport" abstract="true">
+		<property name="hdao" ref="hdao"/>
+		<property name="jdao" ref="jdao"/>
+		<property name="webScope" ref="webScope" />
+	</bean>
+	<bean id="loginService" class="oilcan.service.LoginService" parent="serviceSupport" autowire="byName">
+		<constructor-arg name="hdao" ref="hdao"/>
+		<constructor-arg name="webScope" ref="webScope"/>
+	</bean>
+	<bean id="userService" class="oilcan.service.UserService"  parent="serviceSupport" autowire="byName" />
+	<bean id="roleService" class="oilcan.service.RoleService"  parent="serviceSupport" autowire="byName" />
+	<bean id="dictService" class="oilcan.service.DictService"  parent="serviceSupport" autowire="byName" />
+	<bean id="permissionService" class="oilcan.service.PermissionService"  parent="serviceSupport" autowire="byName" />
+	<bean id="oilcanService" class="oilcan.service.OilcanService"  parent="serviceSupport" autowire="byName" />
+</beans>

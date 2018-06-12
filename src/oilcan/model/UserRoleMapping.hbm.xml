@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.UserRoleMapping" table="UserRoleMapping" schema="dbo" >
+        <composite-id name="id" class="oilcan.model.UserRoleId">
+            <key-many-to-one name="role" class="oilcan.model.Role">
+                <column name="roleId" length="32" />
+            </key-many-to-one>
+            <key-many-to-one name="user" class="oilcan.model.User">
+                <column name="userId" length="32" />
+            </key-many-to-one>
+        </composite-id>
+    </class>
+</hibernate-mapping>

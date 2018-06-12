@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.SafeAttachment" table="SafeAttachment" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="fireDevice" type="java.lang.String">
+            <column name="fireDevice" length="50"/>
+        </property>
+        <property name="dangerLamp" type="java.lang.String">
+            <column name="dangerLamp" length="50"/>
+        </property>
+        <property name="dangerPlate" type="java.lang.String">
+            <column name="dangerPlate" length="50"/>
+        </property>
+        <property name="surfaceMark" type="java.lang.String">
+            <column name="surfaceMark" length="50"/>
+        </property>
+        <property name="paintColor" type="java.lang.String">
+            <column name="paintColor" length="50"/>
+        </property>
+        <property name="systemPosition" type="java.lang.String">
+            <column name="systemPosition" length="50"/>
+        </property>
+        <property name="rubber" type="java.lang.String">
+            <column name="rubber" length="50"/>
+        </property>
+        <property name="transmitType" type="java.lang.String">
+            <column name="transmitType" length="50"/>
+        </property>
+        <property name="transmitValue" type="java.lang.String">
+            <column name="transmitValue" length="50"/>
+        </property>
+        <property name="attendance" type="java.lang.String">
+            <column name="attendance" length="50"/>
+        </property>
+        <property name="ladder" type="java.lang.String">
+            <column name="ladder" length="50"/>
+        </property>
+        <property name="valveContainer" type="java.lang.String">
+            <column name="valveContainer" length="50"/>
+        </property>
+        <property name="valveState" type="java.lang.String">
+            <column name="valveState" length="50"/>
+        </property>
+        <property name="garnerContainer" type="java.lang.String">
+            <column name="garnerContainer" length="50"/>
+        </property>
+        <property name="switchSystem" type="java.lang.String">
+            <column name="switchSystem" length="50"/>
+        </property>
+        <property name="pressure" type="java.lang.String">
+            <column name="pressure" length="50"/>
+        </property>
+        <property name="dnLength" type="java.lang.Integer">
+            <column name="dnLength" />
+        </property>
+        <property name="dnNum" type="java.lang.Integer">
+            <column name="dnNum" />
+        </property>
+        <property name="dnState" type="java.lang.String">
+            <column name="dnState" length="50"/>
+        </property>
+        <property name="breakSystem" type="java.lang.String">
+            <column name="breakSystem" length="50"/>
+        </property>
+        <property name="checkPerson" type="java.lang.String">
+            <column name="checkPerson" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

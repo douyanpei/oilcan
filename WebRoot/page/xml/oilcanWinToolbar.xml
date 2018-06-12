@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="oilcanWinSave" type="button"  img="save.png" action="saveOilcanWin"/>
+	<item type="separator"></item>
+	<item id="oilcanWinCancel" type="button"  img="cancel.png" action="cancelOilcanWin"/>
+</toolbar>

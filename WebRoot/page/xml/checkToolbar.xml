@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="checkText" type="text"/>
+	<item type="separator"></item>
+	<item id="checkAdd" type="button"  img="add.png" action="addCheck"/>
+	<item type="separator"></item>
+	<item id="checkDelete" type="button"  img="delete.png" action="deleteCheck"/>
+</toolbar>

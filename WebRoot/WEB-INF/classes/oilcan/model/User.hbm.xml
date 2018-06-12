@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.User" table="UserInfo" schema="dbo" >
+        <id name="userId" type="java.lang.String">
+            <column name="userId" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="personId" type="java.lang.String">
+            <column name="personId" length="32"/>
+        </property>        
+        <property name="userName" type="java.lang.String">
+            <column name="userName" length="32" not-null="true" />
+        </property>
+        <property name="personName" type="java.lang.String">
+            <column name="personName" length="20" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="32" not-null="true" />
+        </property>
+        <property name="createTime" type="java.lang.String">
+            <column name="createTime" length="20" not-null="true" />
+        </property>
+        <property name="lastModifyTime" type="java.lang.String">
+            <column name="lastModifyTime" length="20" />
+        </property>
+        <property name="lastLoginTime" type="java.lang.String">
+            <column name="lastLoginTime" length="20" />
+        </property>
+        <property name="lastLoginIp" type="java.lang.String">
+            <column name="lastLoginIp" length="15" />
+        </property>
+        <property name="sysadmin" type="java.lang.Boolean">
+            <column name="sysadmin" not-null="true" />
+        </property>
+        <property name="userType" type="java.lang.Boolean">
+            <column name="userType" />
+        </property>
+        <property name="accountExpiredAt" type="java.lang.String">
+            <column name="accountExpiredAt" length="20" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="20" />
+        </property>
+        <property name="pym" type="java.lang.String">
+            <column name="pym" length="100" />
+        </property>
+        <property name="py" type="java.lang.String">
+            <column name="py" length="200" />
+        </property>
+        <property name="seniorityCode" type="java.lang.String">
+            <column name="seniorityCode" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

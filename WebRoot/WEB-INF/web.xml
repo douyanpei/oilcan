@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>oilcan</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		/WEB-INF/persist.xml,/WEB-INF/support.xml,/WEB-INF/service.xml,/WEB-INF/tx.xml
+       </param-value>
+	</context-param>
+	<listener>
+		<listener-class>oilcan.base.filter.ContainerContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>oilcan.base.listener.StartupListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>dwr-web-context-filter</filter-name>
+		<filter-class>org.directwebremoting.servlet.DwrWebContextFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>dwr-web-context-filter</filter-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<!-- 特殊字符过滤器，过去特殊字符 --> 
+		<filter-name>illegalCharacterFilter</filter-name>
+		<filter-class>oilcan.base.filter.IllegalCharacterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>illegalCharacterFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>illegalCharacterFilter</filter-name>
+		<url-pattern>*.ajax</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>webScope-filter</filter-name>
+		<filter-class>auth.interceptor.WebScopeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>webScope-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>open-session-in-view-filter</filter-name>
+		<filter-class>oilcan.base.filter.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>open-session-in-view-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>authentication-filter</filter-name>
+		<filter-class>auth.interceptor.AuthenticationFilter</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/page/login.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>excludedPaths</param-name>
+			<param-value>/js/*,/css/*,/images/*,/page/UpdateSQL.jsp,/page/UploadFile.jsp,/dwr/*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>authentication-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>authorization-filter</filter-name>
+		<filter-class>auth.interceptor.AuthorizationFilter</filter-class>
+		<init-param>
+			<param-name>publicPaths</param-name>
+			<param-value>/page/login.jsp,/dwr/*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>authorization-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<!-- 指定DWR核心Servlet的名字 -->  
+		<servlet-name>dwr-servlet</servlet-name>
+		<!-- 指定DWR核心Servlet的实现类 -->  
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>classes</param-name>
+			<param-value>java.lang.Object</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+             <param-name>crossDomainSessionSecurity</param-name>
+             <param-value>false</param-value>
+     	</init-param>
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>initApplicationScopeCreatorsAtStartup</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxWaitAfterWrite</param-name>
+			<param-value>100</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadSqlServlet</servlet-name>
+    <servlet-class>oilcan.servlet.UploadSqlServlet</servlet-class>
+  </servlet>
+
+	
+	<!-- 指定核心Servlet的URL映射 --> 
+	<servlet-mapping>
+		<servlet-name>dwr-servlet</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadSqlServlet</servlet-name>
+    <url-pattern>/servlet/UploadSqlServlet</url-pattern>
+  </servlet-mapping>
+    
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

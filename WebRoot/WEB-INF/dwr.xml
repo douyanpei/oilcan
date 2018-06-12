@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd">
+<dwr>
+	<allow>
+					<!-- ***************************************
+								      DWR Filter
+					****************************************  -->
+
+		<filter class="oilcan.base.filter.ElegantResultFilter"/>
+					<!-- ***************************************
+								Exported Services
+					****************************************  -->
+
+		<create creator="spring" javascript="lgnsvc" scope="application">
+			<param name="beanName" value="loginService" />
+		</create>
+		<create creator="spring" javascript="dictsvc" scope="application">
+			<param name="beanName" value="dictService" />
+		</create>
+		<create creator="spring" javascript="permissionsvc" scope="application">
+			<param name="beanName" value="permissionService" />
+		</create>
+		<create creator="spring" javascript="usersvc" scope="application">
+			<param name="beanName" value="userService" />
+		</create>
+		<create creator="spring" javascript="rolesvc" scope="application">
+			<param name="beanName" value="roleService" />
+		</create>
+		<create creator="spring" javascript="oilcansvc" scope="application">
+			<param name="beanName" value="oilcanService" />
+		</create>
+					<!-- ***************************************
+									Exception
+					**************************************** -->
+
+		<convert match="java.lang.StackTraceElement" converter="bean" />
+		<convert match="java.lang.Exception" converter="exception" />
+		
+					<!-- ***************************************
+								JavaBean Converters
+					**************************************** -->
+
+<!-- Base Converters -->
+		<convert match="oilcan.model.Role" converter="bean" javascript="Role">
+		</convert>
+		<convert match="oilcan.model.User" converter="bean" javascript="User">
+		</convert>
+		<convert match="oilcan.model.Permission" converter="bean" javascript="Permission">
+			<param name="exclude" value="principals,permissions"/>
+		</convert>
+		<convert match="oilcan.model.Dict" converter="bean" javascript="Dict" />
+		<convert match="oilcan.model.BaseInformation" converter="bean" javascript="BaseInformation" />
+		<convert match="oilcan.model.Problem" converter="bean" javascript="Problem" />
+		<convert match="oilcan.model.OilcanShoulder" converter="bean" javascript="OilcanShoulder" />
+		<convert match="oilcan.model.SafeAttachment" converter="bean" javascript="SafeAttachment" />
+		<convert match="oilcan.model.DetermineShow" converter="bean" javascript="DetermineShow" />
+		<convert match="oilcan.model.ValveHermetic" converter="bean" javascript="ValveHermetic" />
+		<convert match="oilcan.model.RecoverDevice" converter="bean" javascript="RecoverDevice" />
+		<convert match="oilcan.model.CheckRecord" converter="bean" javascript="CheckRecord" />
+		<convert match="oilcan.model.PersonInfo" converter="bean" javascript="PersonInfo" />
+		<convert match="oilcan.model.ReportPage" converter="bean" javascript="ReportPage" />
+		<convert match="oilcan.model.Dict" converter="bean" javascript="Dict" />
+<!-- Other Converters -->
+		<convert match="oilcan.CallResult" converter="bean" javascript="CallResult"/>
+		<convert match="oilcan.RangeList" converter="bean" javascript="RangeList"/>
+	</allow>
+</dwr>

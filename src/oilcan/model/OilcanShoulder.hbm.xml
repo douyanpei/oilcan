@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.OilcanShoulder" table="OilcanShoulder" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="bulwarkNum" type="java.lang.Integer">
+            <column name="bulwarkNum" />
+        </property>
+        <property name="bulwarkState" type="java.lang.String">
+            <column name="bulwarkState" length="50"/>
+        </property>
+        <property name="holeNum" type="java.lang.Integer">
+            <column name="holeNum" />
+        </property>
+        <property name="holeState" type="java.lang.String">
+            <column name="holeState" length="50"/>
+        </property>
+        <property name="affluxNum" type="java.lang.Integer">
+            <column name="affluxNum" />
+        </property>
+        <property name="affluxState" type="java.lang.String">
+            <column name="affluxState" length="50"/>
+        </property>
+        <property name="detroitType" type="java.lang.String">
+            <column name="detroitType" length="50"/>
+        </property>
+        <property name="detroitState" type="java.lang.String">
+            <column name="detroitState" length="50"/>
+        </property>
+        <property name="hasCrack" type="java.lang.String">
+            <column name="hasCrack" length="50"/>
+        </property>
+        <property name="oilcanShow" type="java.lang.String">
+            <column name="oilcanShow" length="50"/>
+        </property>
+        <property name="oilcanDefect" type="java.lang.String">
+            <column name="oilcanDefect" length="200"/>
+        </property>
+        <property name="diameter" type="java.lang.String">
+            <column name="diameter" length="50" />
+        </property>
+        <property name="diameterNum" type="java.lang.String">
+            <column name="diameterNum" length="50" />
+        </property>
+        <property name="valveType" type="java.lang.String">
+            <column name="valveType" length="50"/>
+        </property>
+        <property name="valveMaterial" type="java.lang.String">
+            <column name="valveMaterial" length="50"/>
+        </property>
+        <property name="seepage" type="java.lang.String">
+            <column name="seepage" length="50"/>
+        </property>
+        <property name="refuel" type="java.lang.String">
+            <column name="refuel" length="50"/>
+        </property>
+        <property name="hose" type="java.lang.String">
+            <column name="hose" length="50"/>
+        </property>
+        <property name="recoverSystem" type="java.lang.String">
+            <column name="recoverSystem" length="50"/>
+        </property>
+        <property name="recoverState" type="java.lang.String">
+            <column name="recoverState" length="50"/>
+        </property>
+        <property name="bengSystem" type="java.lang.String">
+            <column name="bengSystem" length="50"/>
+        </property>
+        <property name="bengState" type="java.lang.String">
+            <column name="bengState" length="50"/>
+        </property>
+        <property name="measureSystem" type="java.lang.String">
+            <column name="measureSystem" length="50"/>
+        </property>
+        <property name="refitPlace" type="java.lang.String">
+            <column name="refitPlace" length="50"/>
+        </property>
+        <property name="oilcanHeat" type="java.lang.String">
+            <column name="oilcanHeat" length="50"/>
+        </property>
+        <property name="checkPerson" type="java.lang.String">
+            <column name="checkPerson" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

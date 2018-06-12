@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.RecoverDevice" table="RecoverDevice" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="kiss" type="java.lang.String">
+            <column name="kiss" length="100"/>
+        </property>
+        <property name="hat" type="java.lang.String">
+            <column name="hat" length="100"/>
+        </property>
+        <property name="valve" type="java.lang.String">
+            <column name="valve" length="100"/>
+        </property>
+        <property name="gluing" type="java.lang.String">
+            <column name="gluing" length="100"/>
+        </property>
+        <property name="oilcanPipe" type="java.lang.String">
+            <column name="oilcanPipe" length="100"/>
+        </property>
+        <property name="lineValve" type="java.lang.String">
+            <column name="lineValve" length="100"/>
+        </property>
+        <property name="stand" type="java.lang.String">
+            <column name="stand" length="100"/>
+        </property>
+        <property name="pressure" type="java.lang.String">
+            <column name="pressure" length="100"/>
+        </property>
+        <property name="bottomKiss" type="java.lang.String">
+            <column name="bottomKiss" length="100"/>
+        </property>
+        <property name="bottomHat" type="java.lang.String">
+            <column name="bottomHat" length="100"/>
+        </property>
+        <property name="bottomValve" type="java.lang.String">
+            <column name="bottomValve" length="100"/>
+        </property>
+        <property name="centerValve" type="java.lang.String">
+            <column name="centerValve" length="100"/>
+        </property>
+        <property name="outlet" type="java.lang.String">
+            <column name="outlet" length="100"/>
+        </property>
+        <property name="fixHeight" type="java.lang.String">
+            <column name="fixHeight" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

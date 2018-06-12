@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.Dict" table="Dict" schema="dbo" >
+         <id name="id" type="java.lang.Integer">
+   	 		<column name="id"/>
+   	 		<generator class="identity"/>
+   	 	 </id>
+         <property name="codeType" type="java.lang.String">
+             <column name="codeType" length="30" />
+         </property>
+         <property name="codeDesc" type="java.lang.String">
+             <column name="codeDesc" length="30" />
+         </property>
+         <property name="codeCnName" type="java.lang.String">
+             <column name="codeCNName" length="30" />
+         </property>
+         <property name="codeCnDesc" type="java.lang.String">
+             <column name="codeCnDesc" length="30" />
+         </property>
+         <property name="codeValue" type="java.lang.String">
+             <column name="codeValue" length="2" />
+         </property>
+         <property name="codeIsUse" type="java.lang.String">
+             <column name="codeIsUse" length="1" />
+         </property>
+    </class>
+</hibernate-mapping>

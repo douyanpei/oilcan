@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oilcan-report>
+	<base></base>
+	<problem></problem>
+	<checkRecord></checkRecord>
+	<oilcanShoulder></oilcanShoulder>
+	<safeAttachment></safeAttachment>
+	<recoverDevice></recoverDevice>
+	<valveHermetic></valveHermetic>
+	<determineShow></determineShow>
+	<reportPage></reportPage>
+</oilcan-report>

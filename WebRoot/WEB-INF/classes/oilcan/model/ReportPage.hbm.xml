@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.ReportPage" table="ReportPage" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="code" length="50"/>
+        </property>
+        <property name="materialType" type="java.lang.String">
+            <column name="materialType" length="50"/>
+        </property>
+        <property name="mediumType" type="java.lang.String">
+            <column name="mediumType" length="50"/>
+        </property>
+        <property name="mediumNote" type="java.lang.String">
+            <column name="mediumNote" length="50"/>
+        </property>
+        <property name="registerCode" type="java.lang.String">
+            <column name="registerCode" length="50"/>
+        </property>
+        <property name="roadCode" type="java.lang.String">
+            <column name="roadCode" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

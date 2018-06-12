@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.BaseInformation" table="BaseInformation" schema="dbo" >
+        <id name="id" type="java.lang.String">
+            <column name="id" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="oilcanBrand" type="java.lang.String">
+            <column name="oilcanBrand" length="50"/>
+        </property>        
+        <property name="oilcanModel" type="java.lang.String">
+            <column name="oilcanModel" length="50"/>
+        </property>
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="produce1" type="java.lang.String">
+            <column name="produce1" length="200"/>
+        </property>
+        <property name="carModel" type="java.lang.String">
+            <column name="carModel" length="50"/>
+        </property>
+        <property name="outDate1" type="java.lang.String">
+            <column name="outDate1" length="10"/>
+        </property>
+        <property name="produce2" type="java.lang.String">
+            <column name="produce2" length="200"/>
+        </property>
+        <property name="firstCheckDate" type="java.lang.String">
+            <column name="firstCheckDate" length="10"/>
+        </property>
+        <property name="outDate2" type="java.lang.String">
+            <column name="outDate2" length="10" />
+        </property>
+        <property name="medium" type="java.lang.String">
+            <column name="medium" length="50" />
+        </property>
+        <property name="mediumCode" type="java.lang.String">
+            <column name="mediumCode" length="50" />
+        </property>
+        <property name="density" type="java.lang.String">
+            <column name="density" length="50" />
+        </property>
+		<property name="regDate" type="java.lang.String">
+            <column name="regDate" length="10" />
+        </property>
+		<property name="length" type="java.lang.Integer">
+            <column name="length" />
+        </property>
+		<property name="width" type="java.lang.Integer">
+            <column name="width" />
+        </property>
+		<property name="height" type="java.lang.Integer">
+            <column name="height" />
+        </property>
+		<property name="weight" type="java.lang.Double">
+            <column name="weight" precision="18" />
+        </property>
+		<property name="axisNum" type="java.lang.Integer">
+            <column name="axisNum" />
+        </property>
+		<property name="outCapacity" type="java.lang.Double">
+            <column name="outCapacity" precision="18" />
+		</property>
+        <property name="allowCapacity" type="java.lang.Double">
+            <column name="allowCapacity" precision="18" />
+		</property>
+        <property name="allowWeight" type="java.lang.Double">
+            <column name="allowWeight" precision="18" />
+        </property>
+		<property name="oilcanMaterial" type="java.lang.String">
+            <column name="oilcanMaterial" length="50" />
+        </property>
+		<property name="warehouseNum" type="java.lang.Integer">
+            <column name="warehouseNum" />
+        </property>
+		<property name="unitName" type="java.lang.String">
+            <column name="unitName" length="200" />
+        </property>
+		<property name="outCode" type="java.lang.String">
+            <column name="outCode" length="50" />
+        </property>
+		<property name="licensedCode" type="java.lang.String">
+            <column name="licensedCode" length="50" />
+        </property>
+		<property name="organizationName" type="java.lang.String">
+            <column name="organizationName" length="200" />
+        </property>
+		<property name="checkCode" type="java.lang.String">
+            <column name="checkCode" length="50" />
+        </property>
+		<property name="spotCode" type="java.lang.String">
+            <column name="spotCode" length="50" />
+        </property>
+		<property name="conclusion" type="java.lang.String">
+            <column name="conclusion" length="500" />
+        </property>
+		<property name="nextCheckDate" type="java.lang.String">
+            <column name="nextCheckDate" length="10" />
+        </property>
+		<property name="checkDate" type="java.lang.String">
+            <column name="checkDate" length="10" />
+        </property>
+		<property name="convertNote" type="java.lang.String">
+            <column name="convertNote" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="oilcan"
+  id="myeclipse.1423449025800"
+  context-root="/oilcan"
+  j2ee-spec="5.0"
+  archive="oilcan.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

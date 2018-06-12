@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="oilcan.model.DetermineShow" table="DetermineShow" schema="dbo" >
+        <id name="pid" type="java.lang.String">
+            <column name="pid" length="32" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="baseId" type="java.lang.String">
+            <column name="baseId" length="32"/>
+        </property>        
+        <property name="carNo" type="java.lang.String">
+            <column name="carNo" length="50" />
+        </property>
+        <property name="deviceModel" type="java.lang.String">
+            <column name="deviceModel" length="50"/>
+        </property>
+        <property name="oilcanMaterial" type="java.lang.String">
+            <column name="oilcanMaterial" length="100"/>
+        </property>
+        <property name="deviceCrack" type="java.lang.String">
+            <column name="deviceCrack" length="50"/>
+        </property>
+        <property name="coverHeader" type="java.lang.String">
+            <column name="coverHeader" />
+        </property>
+        <property name="tube" type="java.lang.Double">
+            <column name="tube" />
+        </property>
+         <property name="coupling" type="java.lang.String">
+            <column name="coupling" length="50"/>
+        </property>
+        <property name="gaugeNum" type="java.lang.Integer">
+            <column name="gaugeNum" />
+        </property>
+        <property name="thickness" type="java.lang.String">
+            <column name="thickness" length="50"/>
+        </property>
+        <property name="image1" type="java.lang.Integer">
+            <column name="image1" />
+        </property>
+        <property name="image2" type="java.lang.Integer">
+            <column name="image2" />
+        </property>
+        <property name="showCheck" type="java.lang.String">
+            <column name="showCheck" length="500"/>
+        </property>
+        <property name="conclusion" type="java.lang.String">
+            <column name="conclusion" length="100"/>
+        </property>
+        <property name="checkPerson" type="java.lang.String">
+            <column name="checkPerson" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

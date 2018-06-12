@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="open" type="button"  img="rss.png" text="登记"/>
+	<item id="top_sp1" type="separator"></item>
+	<item id="save" type="button"  img="search.png" text="项目"/>
+	<item id="top_sp2" type="separator"></item>
+	<item id="code" type="button"  img="open.gif" text="编码方案"/>
+	<item id="top_sp3" type="separator"></item>
+	<item id="net" type="button"  img="cut.gif" text="网盘"/>
+</toolbar>

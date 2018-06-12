@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="oilcanAdd" type="button"  img="add.png" action="addOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanUpdate" type="button"  img="update.png" action="updateOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanDelete" type="button"  img="delete.png" action="deleteOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanRepeat" type="button"  img="repeat.png" action="repeatOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanPrint" type="button"  img="print.png" action="printOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanImport" type="button"  img="download.png" action="importOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanExport" type="button"  img="export.png" action="exportOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanConfig" type="button"  img="config.png" action="configOilcan"/>
+	<item type="separator"></item>
+	<item id="oilcanBj" type="button"  img="config.png" action="bjOilcan"/>
+</toolbar>
